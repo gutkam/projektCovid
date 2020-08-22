@@ -1,1 +1,2 @@
-https://api.covid19api.com/summary
+
+https://api.covid19api.com/dayone/country/south-africa/status/confirmed
