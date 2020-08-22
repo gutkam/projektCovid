@@ -1,1 +1,1 @@
-https://corona.lmao.ninja/v2/historical
+https://api.covid19api.com/summary
