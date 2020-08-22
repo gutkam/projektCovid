@@ -9,7 +9,7 @@ public class SessionFactoryProvider {
     public SessionFactory provideSessionFactory(){
 
         return new Configuration()
-                .configure("hibernate-example.cfg.xml")
+                .configure("hibernate.cfg.xml")
                 .buildSessionFactory();
     }
 }
