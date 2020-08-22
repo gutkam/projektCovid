@@ -1,1 +1,1 @@
-https://coronavirus-19-api.herokuapp.com/countries/
+https://corona.lmao.ninja/v2/historical
