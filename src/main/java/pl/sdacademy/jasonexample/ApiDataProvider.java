@@ -14,7 +14,7 @@ public class ApiDataProvider {
 
 
     public static ArrayList<CountryCases> createObjects(String fileName) throws FileNotFoundException {
-        ArrayList arrayList = new ArrayList();
+        ArrayList<CountryCases> arrayList = new ArrayList<>();
         File file = new File("src/main/resources/" + fileName);
         Scanner scanner = new Scanner(file);
         StringBuilder text = new StringBuilder();
@@ -38,8 +38,8 @@ public class ApiDataProvider {
         return arrayList;
     }
 
-    public static ArrayList createObjects() throws FileNotFoundException {
-        ArrayList arrayList = new ArrayList();
+    public static ArrayList<CountryCases> createObjects() throws FileNotFoundException {
+        ArrayList<CountryCases> arrayList = new ArrayList<>();
         File file = new File("src/main/resources/data.json");
         Scanner scanner = new Scanner(file);
         StringBuilder text = new StringBuilder();
