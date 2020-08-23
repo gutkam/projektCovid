@@ -1,3 +1,12 @@
-[{"country":"World","cases":23141122}
-,{"country":"USA","cases":5796727}
-,{"country":"Brazil","cases":3536488}]
+[
+  {"country":"World",
+  "cases":23141122
+},
+  {
+  "country":"USA",
+  "cases":5796727
+},
+  {"country":"Brazil",
+  "cases":3536488
+  }
+]
