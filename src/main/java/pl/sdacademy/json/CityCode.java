@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.json;
 
 public class CityCode {
     private CityCode cityCode;
