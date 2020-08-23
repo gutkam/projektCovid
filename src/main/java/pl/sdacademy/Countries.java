@@ -53,6 +53,10 @@ public class Countries {
         this.population = population;
     }
 
+    public List<Data> getData() {
+        return data;
+    }
+
     @Override
     public String toString() {
         return "Countries{" +
