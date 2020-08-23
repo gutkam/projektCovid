@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 public class SessionFactoryProvider {
 
 
-    public SessionFactory provideSessionFactory(){
+    public SessionFactory createSessionFactory(){
 
         return new Configuration()
                 .configure("hibernate.cfg.xml")
