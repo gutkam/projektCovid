@@ -15,8 +15,23 @@ public class DateUtils {
     }
 
     public long maxMinDiff(List<LocalDate> list) {
-        return dateDifference(Collections.max(list),Collections.min(list));
+        return dateDifference(Collections.max(list), Collections.min(list));
     }
+
+    public boolean datesGap(Set<LocalDate> set) {
+        List<LocalDate> list = new ArrayList<>();
+        for (LocalDate element : set) {
+            list.add(element);
+        }
+
+        //for (LocalDate element : list) {
+            for (int i = 0; i < list.size() - 1; i++)
+                if (list.get(i).plusDays(1) == list.get(i+1)) {
+                    return true;
+                }
+        return false;
+    }
+
 
 //    public static LocalDate minDate(List<LocalDate> list){
 //        LocalDate min = list.get(0);
