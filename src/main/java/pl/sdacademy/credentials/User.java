@@ -1,9 +1,26 @@
 package pl.sdacademy.credentials;
 
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.time.LocalDate;
 
+
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+    private String firstName;
+    private String lastName;
+    private LocalDate dateOfBirth;
+    private Boolean admin;
+
+    public User() {
+    }
+
     public int Id() {
         return id;
     }
@@ -44,14 +61,16 @@ public class User {
         this.admin = admin;
     }
 
-    private int id;
-    private String firstName;
-    private String lastName;
-    private LocalDate dateOfBirth;
-    private Boolean admin;
 
     public User(int id, String firstName, String lastName, LocalDate dateOfBirth, Boolean admin) {
         this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+        this.admin = admin;
+    }
+
+    public User(String firstName, String lastName, LocalDate dateOfBirth, Boolean admin) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;

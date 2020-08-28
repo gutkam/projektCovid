@@ -72,7 +72,7 @@ public class InMemoryUserRepository implements UserRepository {
 
     private void UserListInitialization() {
         User u1 = new User(1, "Michał", "Kowal", LocalDate.of(1984, 12, 19), true);
-        User u2 = new User(2, "Bartek", "Markowski", LocalDate.of(1976, 05, 9), false);
+        User u2 = new User(2, "Bartek", "Markowski", LocalDate.of(1976, 5, 9), false);
         User u3 = new User(3, "Kamil", "Kapoor", LocalDate.of(1999, 8, 12), false);
 
         userArrayList.add(u1);
