@@ -73,7 +73,7 @@ public class HibernateUserRepository implements UserRepository {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
 
-            user = new User(firstName, lastName , dateOfBirth,admin);
+            user = new User(firstName, lastName, dateOfBirth, admin);
             session.persist(user);
             session.flush();
 
@@ -87,7 +87,8 @@ public class HibernateUserRepository implements UserRepository {
         }
         return user.Id();
     }
-//Zaimplementuj metodę update w klasie HibernateUserRepository .
+
+    //Zaimplementuj metodę update w klasie HibernateUserRepository .
     @Override
     public boolean update(int id, String firstName, String lastName, LocalDate dateOfBirth, Boolean admin) {
         Session session = null;
@@ -95,39 +96,59 @@ public class HibernateUserRepository implements UserRepository {
         User user = null;
         Boolean retValue = false;
 
-       try{
-           session = sessionFactory.openSession();
-           user = readById(id);
-           if (user != null) {
-               transaction = session.beginTransaction();
-               user.FirstName(firstName);
-               user.LastName(lastName);
-               user.DateOfBirth(dateOfBirth);
-               user.Admin(admin);
-               session.update(user);
-               transaction.commit();
-               retValue = true;
-           }
+        try {
+            session = sessionFactory.openSession();
+            user = readById(id);
+            if (user != null) {
+                transaction = session.beginTransaction();
+                user.FirstName(firstName);
+                user.LastName(lastName);
+                user.DateOfBirth(dateOfBirth);
+                user.Admin(admin);
+                session.update(user);
+                transaction.commit();
+                retValue = true;
+            }
 
-       }
-
-       catch (HibernateException e) {
-           if (transaction != null) {
-               transaction.rollback();
-           }
-           retValue = false;
-       }
-
-       finally {
-           session.close();
-       }
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            retValue = false;
+        } finally {
+            session.close();
+        }
 
         return retValue;
     }
 
     @Override
     public boolean delete(int id) {
-        return false;
+        Session session = null;
+        Transaction transaction = null;
+        User user = null;
+        Boolean retValue = false;
+
+        try {
+            session = sessionFactory.openSession();
+            user = readById(id);
+            if (user != null) {
+                transaction = session.beginTransaction();
+                session.remove(user);
+                transaction.commit();
+                retValue = true;
+            }
+        } catch (HibernateException e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+
+            retValue = false;
+        } finally {
+            session.close();
+        }
+
+        return retValue;
     }
 
 }
