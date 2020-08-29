@@ -6,11 +6,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
-        ArrayList arrayList = new ArrayList();
+        List<CountryCases> arrayList = new ArrayList<>();
         File file = new File("src/main/resources/example.json");
         Scanner scanner = new Scanner(file);
         StringBuilder text = new StringBuilder();
