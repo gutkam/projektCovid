@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.dbexample;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

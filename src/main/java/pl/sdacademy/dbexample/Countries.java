@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.dbexample;
 
 import javax.persistence.*;
 import java.util.ArrayList;

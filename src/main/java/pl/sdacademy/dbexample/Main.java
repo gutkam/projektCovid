@@ -1,4 +1,4 @@
-package pl.sdacademy;
+package pl.sdacademy.dbexample;
 
 
 public class Main {

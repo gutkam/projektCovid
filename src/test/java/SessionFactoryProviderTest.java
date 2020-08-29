@@ -1,9 +1,6 @@
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.junit.Test;
-import pl.sdacademy.SessionFactoryProvider;
-
-import static org.junit.Assert.*;
+import pl.sdacademy.dbexample.SessionFactoryProvider;
 
 public class SessionFactoryProviderTest {
 
