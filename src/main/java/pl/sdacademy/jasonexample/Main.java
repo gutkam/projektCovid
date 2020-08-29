@@ -4,12 +4,15 @@ import com.google.gson.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         List<CountryCases> arrayList = new ArrayList<>();
         File file = new File("src/main/resources/example.json");
         Scanner scanner = new Scanner(file);
@@ -32,7 +35,9 @@ public class Main {
             arrayList.add(new CountryCases(country,cases));
         }
 
-        System.out.println(ApiDataProvider.createObjects("example.json").toString());
+        //System.out.println(ApiDataProvider.createObjects("example.json").toString());
+
+        System.out.println(ApiDataProvider.createObjects().toString());
 
 
     }
